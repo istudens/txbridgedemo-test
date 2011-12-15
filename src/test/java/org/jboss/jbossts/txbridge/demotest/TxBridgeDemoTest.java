@@ -60,10 +60,10 @@ import java.util.zip.ZipFile;
 public class TxBridgeDemoTest {
     private static final Logger log = Logger.getLogger(TxBridgeDemoTest.class);
 
-    private static final String XTS_DEMO_DIR = "../../XTS/xts-install/demo/build/";
+    private static final String XTS_DEMO_DIR = "ext/";
     private static final String XTS_DEMO_ARCHIVE = "xts-demo.ear";
 
-    private static final String TXBRIDGE_DEMO_DIR = "../demo/build";
+    private static final String TXBRIDGE_DEMO_DIR = XTS_DEMO_DIR;
     private static final String TXBRIDGE_DEMO_SERVICE_ARCHIVE = "txbridge-demo-service.jar";
     private static final String TXBRIDGE_DEMO_CLIENT_ARCHIVE = "txbridge-demo-client.war";
 
