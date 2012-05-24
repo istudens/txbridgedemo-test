@@ -21,13 +21,13 @@
  */
 package org.jboss.jbossts.txbridge.demotest;
 
-import static org.jboss.arquillian.ajocado.Ajocado.elementPresent;
-import static org.jboss.arquillian.ajocado.Ajocado.name;
-import static org.jboss.arquillian.ajocado.Ajocado.waitForHttp;
-import static org.jboss.arquillian.ajocado.Ajocado.waitModel;
-import static org.jboss.arquillian.ajocado.Ajocado.xp;
+import static org.jboss.arquillian.ajocado.Graphene.elementPresent;
+import static org.jboss.arquillian.ajocado.Graphene.name;
+import static org.jboss.arquillian.ajocado.Graphene.waitForHttp;
+import static org.jboss.arquillian.ajocado.Graphene.waitModel;
+import static org.jboss.arquillian.ajocado.Graphene.xp;
 
-import org.jboss.arquillian.ajocado.framework.AjaxSelenium;
+import org.jboss.arquillian.ajocado.framework.GrapheneSelenium;
 import org.jboss.arquillian.ajocado.locator.NameLocator;
 import org.jboss.arquillian.ajocado.locator.XPathLocator;
 import org.jboss.arquillian.container.test.api.Deployment;
@@ -74,9 +74,8 @@ public class TxBridgeDemoTest {
     private static final String PARENT_TX_TYPE_JTA = "JTA";
 
 
-    // load ajocado driver
     @Drone
-    AjaxSelenium driver;
+    GrapheneSelenium driver;
 
 
     protected NameLocator TX_TYPE_FIELD = name("txType");
@@ -84,8 +83,8 @@ public class TxBridgeDemoTest {
 
     protected NameLocator SUBMIT_BUTTON = name("submit");
 
-    protected XPathLocator RESULT_TABLE_TITLE_XP = xp("/html/body/form/p[1]");
-    protected XPathLocator RESULT_TABLE_CONTENT_XP = xp("/html/body/form/p[1]");
+    protected XPathLocator RESULT_TABLE_TITLE_XP = xp("//span[@class='result_title']");
+    protected XPathLocator RESULT_TABLE_CONTENT_XP = xp("//span[@class='result']");
 
 
     @Deployment(name = XTS_DEMO_ARCHIVE, testable = false, order = 1)
